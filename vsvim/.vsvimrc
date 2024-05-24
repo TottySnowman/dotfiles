@@ -1,0 +1,39 @@
+map gi :vsc Edit.GoToImplementation<CR>
+map gr :vsc Edit.FindAllReferences<CR>
+map gp :vsc Edit.PeekDefinition<CR>
+let mapleader="<space>"
+
+" break out of the tyranny of text! Navigate by method
+nnoremap <leader>m :vsc Edit.NextMethod<cr>
+nnoremap <leader>M :vsc Edit.PreviousMethod<cr>
+
+nnoremap R :vsc Refactor.Rename<cr>
+
+" jump between compilation errors
+nnoremap <leader>e :vsc View.NextError<cr>
+nnoremap <leader>E :vsc View.PreviousError<cr>
+
+" testing and debugging
+nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
+
+" open the change parameter window, a bit fake because it's not a text-object
+nnoremap cia :vsc Refactor.ReorderParameters<cr>
+
+" the highlighted text gets replaced it gets yanked into oblivion
+xnoremap <leader>p "_dp
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" yankes the content into clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+" yankes the whole line into clipboard
+nnoremap <leader>Y "+Y
+
+" Map Ctrl + s to save the file
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> <Esc>:w<CR>
+
+set relativenumber
