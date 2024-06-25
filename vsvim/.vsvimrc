@@ -19,6 +19,9 @@ nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
 " open the change parameter window, a bit fake because it's not a text-object
 nnoremap cia :vsc Refactor.ReorderParameters<cr>
 
+" used to navigate to another file
+nnoremap <c-p> :vsc Edit.GoToFile<CR>
+
 " the highlighted text gets replaced it gets yanked into oblivion
 xnoremap <leader>p "_dp
 nnoremap <leader>d "_d
