@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "omnisharp", "gopls", "prismals" },
+				ensure_installed = { "lua_ls", "tsserver", "omnisharp", "gopls", "prismals", "texlab" },
 			})
 		end,
 	},
@@ -82,7 +82,11 @@ return {
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
+
 			lspconfig.prismals.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.texlab.setup({
 				capabilities = capabilities,
 			})
 
