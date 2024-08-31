@@ -89,10 +89,17 @@ return {
 			lspconfig.texlab.setup({
 				capabilities = capabilities,
 			})
+			local function on_list(options)
+				vim.fn.setqflist({}, " ", options)
+				vim.cmd.cfirst()
+			end
+			vim.lsp.buf.definition({ on_list = on_list })
+			vim.lsp.buf.references(nil, { on_list = on_list })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 		end,
 	},
 }
