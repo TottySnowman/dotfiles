@@ -8,7 +8,6 @@ config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.tab_and_split_indices_are_zero_based = true
-config.window_decorations = "RESIZE"
 config.color_scheme = "Catppuccin Macchiato"
 config.default_cursor_style = "BlinkingBar"
 config.font = wezterm.font("SauceCodePro Nerd Font", { weight = "Black", stretch = "Normal", style = "Normal" })
@@ -89,7 +88,7 @@ config.keys = {
 	{
 		key = "l",
 		mods = "ALT",
-		action = wezterm.action.ShowLauncherArgs { flags = "FUZZY|WORKSPACES" },
+		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
 	},
 	{
 		key = "w",
@@ -139,10 +138,10 @@ wezterm.on("update-right-status", function(window, _)
 end)
 
 wezterm.on("update-status", function(window, pane)
-  local workspace = window:active_workspace()
-  window:set_right_status(wezterm.format({
-    {Text="Workspace: " .. workspace},
-  }))
+	local workspace = window:active_workspace()
+	window:set_right_status(wezterm.format({
+		{ Text = "Workspace: " .. workspace },
+	}))
 end)
 
 return config
