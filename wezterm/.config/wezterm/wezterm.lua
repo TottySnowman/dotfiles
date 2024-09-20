@@ -10,6 +10,7 @@ config.use_fancy_tab_bar = false
 config.tab_and_split_indices_are_zero_based = true
 config.color_scheme = "Catppuccin Macchiato"
 config.default_cursor_style = "BlinkingBar"
+config.window_decorations = "RESIZE"
 config.font = wezterm.font("SauceCodePro Nerd Font", { weight = "Black", stretch = "Normal", style = "Normal" })
 
 -- tmux-like key bindings
