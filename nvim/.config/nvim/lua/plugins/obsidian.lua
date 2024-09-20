@@ -15,7 +15,7 @@ return {
         },
         {
           name = "work",
-          path = "/Users/paul-philippewortmann/Documents/Obsidian",
+          path = "C:/Users/Paul Wortmann/Documents/obsidian",
         },
       },
       follow_url_func = function(url)
