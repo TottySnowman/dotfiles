@@ -18,7 +18,7 @@ config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
 config.keys = {
 	{
 		mods = "LEADER",
-		key = "c",
+		key = "t",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 	{
@@ -87,13 +87,13 @@ config.keys = {
 		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
-		key = "l",
-		mods = "ALT",
+		key = ",",
+		mods = "LEADER",
 		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
 	},
 	{
-		key = "w",
-		mods = "ALT",
+		key = "c",
+		mods = "LEADER",
 		action = wezterm.action.PromptInputLine({
 			description = "Enter workspace name",
 			action = wezterm.action_callback(function(window, pane, line)
@@ -138,7 +138,7 @@ wezterm.on("update-right-status", function(window, _)
 	}))
 end)
 
-wezterm.on("update-status", function(window, pane)
+wezterm.on("update-status", function(window)
 	local workspace = window:active_workspace()
 	window:set_right_status(wezterm.format({
 		{ Text = "Workspace: " .. workspace },
