@@ -92,12 +92,6 @@ return {
         vim.lsp.buf.signature_help,
         { noremap = true, silent = true }
       )
-      vim.keymap.set(
-        "i",
-        "<leader>sh",
-        vim.lsp.buf.signature_help,
-        { noremap = true, silent = true }
-      )
     end,
   },
 }
