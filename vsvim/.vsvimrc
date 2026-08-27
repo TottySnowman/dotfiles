@@ -1,6 +1,7 @@
 map gi :vsc Edit.GoToImplementation<CR>
 map gr :vsc Edit.FindAllReferences<CR>
 map gp :vsc Edit.PeekDefinition<CR>
+
 let mapleader="<space>"
 
 " break out of the tyranny of text! Navigate by method
@@ -13,11 +14,17 @@ nnoremap R :vsc Refactor.Rename<cr>
 nnoremap <leader>e :vsc View.NextError<cr>
 nnoremap <leader>E :vsc View.PreviousError<cr>
 
+nnoremap <leader>- :sp<cr>
+nnoremap <leader>/ :vsp<cr>
+
 " testing and debugging
 nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
 
 " open the change parameter window, a bit fake because it's not a text-object
 nnoremap cia :vsc Refactor.ReorderParameters<cr>
+
+" format code 
+nnoremap <leader>gf :vsc Edit.FormatDocument<CR>
 
 " used to navigate to another file
 nnoremap <c-p> :vsc Edit.GoToFile<CR>
@@ -40,3 +47,26 @@ inoremap <C-s> <Esc>:w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
 set relativenumber
+set number
+vmap <leader>c :vsc Edit.CommentSelection<CR>
+vmap <leader>C :vsc Edit.UncommentSelection<CR>
+
+nnoremap <leader>a :vsc FastFileSwitcher.AddFile<CR>
+nnoremap <leader>1 :vsc FastFileSwitcher.SwitchToFile<CR>
+nnoremap <leader>2 :vsc FastFileSwitcher.SwitchToFile2<CR>
+nnoremap <leader>3 :vsc FastFileSwitcher.SwitchToFile3<CR>
+nnoremap <leader>4 :vsc FastFileSwitcher.SwitchToFile4<CR>
+nnoremap <leader>5 :vsc FastFileSwitcher.SwitchToFile5<CR>
+nnoremap <leader>6 :vsc FastFileSwitcher.SwitchToFile6<CR>
+nnoremap <leader>7 :vsc FastFileSwitcher.SwitchToFile7<CR>
+nnoremap <leader>8 :vsc FastFileSwitcher.SwitchToFile8<CR>
+nnoremap <leader>9 :vsc FastFileSwitcher.SwitchToFile9<CR>
+
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
+
+:nmap K :vsc Edit.QuickInfo<CR>
+:set ignorecase
+:set smartcase
